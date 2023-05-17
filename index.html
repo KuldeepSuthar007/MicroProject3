@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BILL SPILL </title>
+    <link rel="icon" type="image/x-icon" href="/icons8-paid-bill-50.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>BILL SPILL</h1>
+
+    <div class="container">
+
+        <div class="billbox">
+
+            <div class="col left">
+                <div class="bx1">
+                    <p>Bill</p>
+                    <div class="inputdiv">
+                        <img src="./₹.png" alt="">
+                        <input id="bill" type="text" placeholder="0">
+                    </div>
+
+                </div>
+
+                <div class="bx2">
+                    <h1>Select Tip %</h1><br>
+                    <div class="buttons">
+                        <p class="percentage">5%</p>
+                        <p class="percentage">10%</p>
+                        <p class="percentage">15%</p>
+                        <p class="percentage">20%</p>
+                        <p class="percentage">25%</p>
+                        <p class="percentage">30%</p>
+                    </div>
+                </div>
+
+                <p>Number of People</p>
+                <div class="bx3">
+                    <div class="vectorimg">
+                        <img src="./Vector.png" alt="">
+                        <div class="counter">
+                            <button id="inc_button">+</button>
+                            <p id="people">0</p>
+                            <button id="dec_button">-</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bx4">
+                    <button id="gen_button">Generate Bill</button>
+                </div>
+
+            </div>
+            <div class="col right">
+
+                <div class="amtbox">
+                    <div class="text">
+                        <p>Tip Amount </p>
+                        <p>/person</p>
+                    </div>
+                    <p class="money" id="tip_amount">₹0.00</p>
+                </div>
+
+                <div class="totalbox">
+                    <div class="text">
+                        <p>Total </p>
+                        <p>/person</p>
+                    </div>
+                    <p class="money" id="total">₹0.00</p>
+                </div>
+
+                <div class="reset">
+                    <button class="reset">RESET</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="./script.js"></script>
+
+</html>
