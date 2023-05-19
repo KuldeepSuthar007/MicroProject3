@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Inter&family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Inconsolata&family=Inter&family=Space+Mono&display=swap");
 * {
   margin: 0px;
   padding: 0px;
@@ -5,16 +8,25 @@
 
 body {
   background-color: #d6bcff;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
-h1 {
+.h1 {
+  width: 100vw;
   color: #9c60ff;
   justify-items: center;
   text-align: center;
   margin-top: 40px;
+  letter-spacing: 0.6rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
 }
 .container {
-  width: 1440px;
+  width: 100vw;
   height: 680px;
   display: flex;
   justify-content: center;
@@ -55,62 +67,63 @@ h1 {
   align-items: flex-start;
   justify-content: center;
   margin-top: 10px;
+  margin-left: 2px;
   flex-direction: column;
   position: relative;
-}
-
-.inputdiv img {
-  position: absolute;
-  left: 10%;
-  width: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.inputdiv input {
-  width: 306px;
-  height: 6px;
-  text-align: right;
-  padding: 21px 18px;
-  font-size: 24px;
+  width: 342px;
+  height: 48px;
   background-color: #b6acc387;
   color: #9c60ff;
   box-shadow: 0 0 5pt 0.5pt #d3d3d3;
   border: 2px solid transparent;
 }
 
-.inputdiv input:focus {
+.inputdiv img {
+  position: absolute;
+  left: 8%;
+  width: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.inputdiv input {
+  width: 270px;
+  height: 6px;
+  text-align: right;
+  font-style: normal;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  margin-left: 30px;
+  padding: 21px 18px;
+  font-size: 30px;
+  background-color: lightgrey;
+  color: #9c60ff;
+  letter-spacing: 0.1rem;
+  border: 2px solid transparent;
+}
+.inputdiv input {
   outline: none !important;
-  border: 2px solid #9c60ff;
 }
 .bx1 p {
   font-size: 16px;
-  font-family: "Inconsolata";
+  font-family: "Inconsolata", monospace;
   font-style: normal;
   font-weight: 800;
   color: #9c60ff;
   margin-left: 1px;
-} /*
-.bx1 input {
-  margin-top: 5px;
-  height: 43px;
-  width: 342px;
-  background-color: #b6acc387;
-  border: 0px solid;
-} */
+}
 .bx2 {
   height: 200px;
 }
 .bx2 h1 {
   font-size: 16px;
   font-style: normal;
-  font-family: "Inconsolata";
+  font-family: "Inconsolata", monospace;
   font-weight: 800;
   margin-left: 6px;
   color: #9c60ff;
   margin-top: 14px;
 }
-
 .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -127,7 +140,7 @@ h1 {
   color: #e9dbff;
   background-color: #9c60ff;
   border: 0px solid;
-  font-family: "Monospaceland";
+  font-family: "Space Mono", monospace;
   font-style: normal;
   font-size: 21px;
   font-weight: 400;
@@ -143,19 +156,16 @@ h1 {
   color: #e9dbff;
 }
 .active {
-  color: #9c60ff;
-  background-color: #e9dbff;
+  border: 2.5px solid #4200ff;
 }
-
 p {
   font-size: 16px;
   font-style: normal;
-  font-family: "Inconsolata";
+  font-family: "Inconsolata", monospace;
   font-weight: 800;
   margin-left: 6px;
   color: #9c60ff;
 }
-
 .bx3 {
   box-sizing: border-box;
   height: 90px;
@@ -171,7 +181,6 @@ p {
   background: rgba(182, 172, 196, 0.53);
   border-radius: 3px;
 }
-
 .vectorimg img {
   height: 25px;
   width: 25px;
@@ -197,6 +206,7 @@ p {
 .counter p {
   height: 41px;
   width: 60px;
+  font-family: "Space Mono", monospace;
   text-align: center;
   border: 1px soild black;
   border-radius: 3px;
@@ -205,12 +215,11 @@ p {
   height: 90px;
   padding: 10px;
 }
-
-.bx4 button {
+#gen_button {
   height: 46px;
   width: 342px;
   font-size: 19px;
-  font-family: "Inconsolata";
+  font-family: "Inconsolata", monospace;
   font-style: normal;
   font-weight: 800;
   color: #8f8f8f;
@@ -237,17 +246,14 @@ p {
   flex-direction: column;
   padding: 21px;
 }
-
 .amtbox {
   box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #9c60ff;
   height: 150px;
   margin-top: 5px;
   padding-top: 35px;
-  padding-left: 10px;
-  padding-right: 10px;
   border-radius: 11px 11px 0px 0px;
   color: #f3e4ff;
   border: 0px solid;
@@ -256,46 +262,41 @@ p {
   color: white;
 }
 
-.amtbox > p:nth-child(1) {
+.text > p:nth-child(1) {
   font-size: 16px;
-  font-family: "Inconsolata";
+  font-family: "Inconsolata", monospace;
   font-style: normal;
   font-weight: 600;
   color: #f3e4ff;
 }
-
-.amtbox > p:nth-child(2) {
-  font-size: 40px;
-  font-family: "Inconsolata";
-  font-style: normal;
-  font-weight: 600;
-  color: #c39fff;
-}
-
-.totalbox > p:nth-child(1) {
+.text > p:nth-child(2) {
   font-size: 16px;
-  font-family: "Inconsolata";
-  font-style: normal;
-  font-weight: 600;
-  color: #f3e4ff;
-}
-.totalbox > p:nth-child(2) {
-  font-size: 40px;
-  font-family: "Inconsolata";
+  font-family: "Inconsolata", monospace;
   font-style: normal;
   font-weight: 600;
   color: #c39fff;
 }
-
+.amtbox p {
+  font-size: 35px;
+  font-family: "Inconsolata", monospace;
+  font-style: normal;
+  font-weight: 600;
+  color: #c39fff;
+}
 .totalbox {
   box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 150px;
-  padding-left: 10px;
-  padding-right: 10px;
   background-color: #9c60ff;
   border: 0px solid;
+}
+.totalbox p {
+  font-size: 35px;
+  font-family: "Inconsolata", monospace;
+  font-style: normal;
+  font-weight: 600;
+  color: #c39fff;
 }
 .reset {
   display: flex;
@@ -310,7 +311,7 @@ p {
   height: 44px;
   width: 300px;
   font-size: 16px;
-  font-family: "DM Sans";
+  font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
   color: #9c60ff;
@@ -319,11 +320,108 @@ p {
   border: 0px solid;
   cursor: pointer;
   opacity: 1;
+  letter-spacing: 0.1rem;
 }
 
-.disabled {
-  opacity: 0.2;
-  cursor: not-allowed;
-  color: white;
-  background-color: red;
+@media only screen and (max-width: 450px) {
+  body {
+    overflow: scroll;
+  }
+  .container {
+    width: 380px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #d6bcff;
+  }
+
+  .h1 {
+    font-size: 14px;
+  }
+  .billbox {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    height: 1100px;
+    margin: auto;
+    border-radius: 21px;
+    padding: 10px;
+  }
+
+  .left {
+    box-sizing: border-box;
+    width: 370px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .right {
+    box-sizing: border-box;
+    width: 370px;
+    height: 600px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 8px;
+  }
+  .bx2 {
+    height: 300px;
+    width: 350px;
+    margin-bottom: 20px;
+  }
+  .buttons {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .percentage {
+    width: 150px;
+    height: 50px;
+  }
+  .bx1 p {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .bx2 h1 {
+    margin-left: 0px;
+    font-size: 24px;
+    margin-top: 45px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 24px;
+  }
+  .nofpeople {
+    text-align: left;
+    margin-top: 20px;
+    width: 350px;
+  }
+  .bx3 {
+    margin-top: 10px;
+  }
+  #gen_button {
+    margin-top: 20px;
+    border-radius: 30px;
+  }
+  .text > p:nth-child(1) {
+    font-size: 24px;
+  }
+  .text > p:nth-child(2) {
+    font-size: 24px;
+  }
+  .amtbox p {
+    font-size: 45px;
+  }
+  .reset button {
+    border-radius: 30px;
+  }
 }
