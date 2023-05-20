@@ -1,6 +1,7 @@
 const bill = document.querySelector('#bill');
 const people = document.querySelector('#people');
 const tip = document.querySelectorAll('.percentage');
+const customtip = document.querySelector('#custom_percent')
 const tip_display = document.querySelector('#tip_amount');
 const total = document.querySelector('#total');
 const genButton = document.querySelector('#gen_button');
@@ -8,13 +9,11 @@ const reset = document.querySelector("#reset_button");
 const incButton = document.getElementById('inc_button');
 const decButton = document.getElementById('dec_button');
 
-
 var value = 0;
 var percentage_tip = 0.0;
 var number = 0;
 var tip_person = 0;
 var total_person = 0;
-
 
 function increment() {
     ++number
@@ -27,15 +26,12 @@ function Decrement() {
         number = 0
     people.innerText = number;
 };
-
-
 const calculate = () => {
     tip_person = ((value * (percentage_tip / 100)) / number).toFixed(2);
     tip_display.innerText = `₹${tip_person}`;
     total_person = ((value + value * (percentage_tip / 100)) / number).toFixed(2);
     total.innerText = `₹${total_person}`;
 };
-
 const generatefn = () => {
     if (value > 0 && percentage_tip > 0 && number >= 1) {
         genButton.style.color = "#ffffff";
@@ -45,7 +41,6 @@ const generatefn = () => {
         calculate();
     }
 };
-
 const resetfn = () => {
     if (tip_person > 0 || total_person > 0) {
         value = 0;
@@ -71,7 +66,6 @@ bill.addEventListener('input', (e) => {
     bill.style.textAlign = "left";
 });
 
-
 document.querySelector(".buttons").addEventListener("click", (e) => {
     const button = e.target.closest(".percentage");
     if (button) {
@@ -83,6 +77,10 @@ document.querySelector(".buttons").addEventListener("click", (e) => {
     percentage_tip = parseInt(button.innerText);
 });
 
+customtip.addEventListener('input', (e) => {
+    percentage_tip = parseFloat(e.target.value);
+    console.log(percentage_tip);
+})
 incButton.addEventListener('click', increment);
 decButton.addEventListener('click', Decrement);
 genButton.addEventListener('click', generatefn);

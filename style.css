@@ -5,14 +5,17 @@
   margin: 0px;
   padding: 0px;
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 body {
   background-color: #d6bcff;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
-
 .h1 {
   width: 100vw;
   color: #9c60ff;
@@ -33,7 +36,6 @@ body {
   align-items: center;
   background-color: #d6bcff;
 }
-
 .billbox {
   height: 500px;
   width: 800px;
@@ -43,13 +45,6 @@ body {
   border-radius: 21px;
   padding: 20px;
 }
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .col {
   flex: 1;
 }
@@ -67,7 +62,6 @@ input::-webkit-inner-spin-button {
   padding: 5px;
   height: 90px;
 }
-
 .inputdiv {
   display: flex;
   align-items: flex-start;
@@ -83,7 +77,6 @@ input::-webkit-inner-spin-button {
   box-shadow: 0 0 5pt 0.5pt #d3d3d3;
   border: 2px solid transparent;
 }
-
 .inputdiv img {
   position: absolute;
   left: 8%;
@@ -91,7 +84,35 @@ input::-webkit-inner-spin-button {
   top: 50%;
   transform: translateY(-50%);
 }
-
+#gen_button {
+  height: 46px;
+  width: 342px;
+  font-size: 19px;
+  font-family: "Inconsolata", monospace;
+  font-style: normal;
+  font-weight: 800;
+  color: #8f8f8f;
+  background-color: #fbfafb;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.43);
+  border-radius: 9px;
+  border: 0px solid;
+  cursor: pointer;
+}
+.reset button {
+  height: 44px;
+  width: 300px;
+  font-size: 16px;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: #9c60ff;
+  background-color: #c39fff;
+  border-radius: 5px;
+  border: 0px solid;
+  cursor: pointer;
+  opacity: 1;
+  letter-spacing: 0.1rem;
+}
 .inputdiv input {
   width: 270px;
   height: 6px;
@@ -107,6 +128,7 @@ input::-webkit-inner-spin-button {
   letter-spacing: 0.1rem;
   border: 2px solid transparent;
 }
+
 .inputdiv input {
   outline: none !important;
 }
@@ -156,13 +178,14 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 }
-
 .percentage:hover {
   background-color: #9c60ff;
   color: #e9dbff;
 }
-.active {
-  border: 2.5px solid #4200ff;
+#custom_percent {
+  background-color: #e9dbff;
+  color: #9c60ff;
+  outline: none !important;
 }
 p {
   font-size: 16px;
@@ -221,20 +244,6 @@ p {
   height: 90px;
   padding: 10px;
 }
-#gen_button {
-  height: 46px;
-  width: 342px;
-  font-size: 19px;
-  font-family: "Inconsolata", monospace;
-  font-style: normal;
-  font-weight: 800;
-  color: #8f8f8f;
-  background-color: #fbfafb;
-  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.43);
-  border-radius: 9px;
-  border: 0px solid;
-  cursor: pointer;
-}
 
 .btn {
   width: 100px;
@@ -242,7 +251,6 @@ p {
   margin: 5px;
   background-color: dimgrey;
 }
-
 .right {
   box-sizing: border-box;
   width: 200px;
@@ -289,6 +297,9 @@ p {
   font-weight: 600;
   color: #c39fff;
 }
+.active {
+  border: 2.5px solid #4200ff;
+}
 .totalbox {
   box-sizing: border-box;
   display: flex;
@@ -313,26 +324,22 @@ p {
   background-color: #9c60ff;
   border: 0px solid;
 }
-.reset button {
-  height: 44px;
-  width: 300px;
-  font-size: 16px;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  color: #9c60ff;
-  background-color: #c39fff;
-  border-radius: 5px;
-  border: 0px solid;
-  cursor: pointer;
-  opacity: 1;
-  letter-spacing: 0.1rem;
-}
 
-@media only screen and (max-width: 450px) {
-  body {
-    overflow: scroll;
+@media only screen and (max-width: 800px) {
+  .billbox {
+    height: 464px;
+    padding: 0px;
   }
+  .reset button {
+    border-radius: 24px;
+    width: 220px;
+  }
+  #gen_button {
+    width: 332px;
+    border-radius: 33px;
+  }
+}
+@media only screen and (max-width: 480px) {
   .container {
     width: 380px;
     height: auto;
@@ -343,7 +350,6 @@ p {
     margin-top: 30px;
     background-color: #d6bcff;
   }
-
   .h1 {
     font-size: 14px;
   }
@@ -353,10 +359,9 @@ p {
     width: 380px;
     height: 1100px;
     margin: auto;
-    border-radius: 21px;
+    border-radius: 0px;
     padding: 10px;
   }
-
   .left {
     box-sizing: border-box;
     width: 370px;
@@ -366,7 +371,9 @@ p {
     justify-items: center;
     align-items: center;
   }
-
+  body {
+    overflow: scroll;
+  }
   .right {
     box-sizing: border-box;
     width: 370px;
@@ -432,5 +439,6 @@ p {
   }
   .reset button {
     border-radius: 30px;
+    width: 300px;
   }
 }
